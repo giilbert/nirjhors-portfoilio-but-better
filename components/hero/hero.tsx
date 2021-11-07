@@ -1,12 +1,18 @@
 import React from "react";
 import styles from "./hero.module.css";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 interface HeroProps {}
 
 const Hero: React.FC<HeroProps> = ({}) => {
   return (
-    <div className={styles.container}>
+    <motion.div
+      className={styles.container}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: "100%" }}
+      transition={{ delay: 0.3, ease: [0.7, 0, 0.07, 1], duration: 1 }}
+    >
       <div>
         <div className={styles.text}>
           <h4>
@@ -32,7 +38,7 @@ const Hero: React.FC<HeroProps> = ({}) => {
           alt="person coding"
         />
       </div>
-    </div>
+    </motion.div>
   );
 };
 

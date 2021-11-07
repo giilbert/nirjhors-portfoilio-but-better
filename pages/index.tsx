@@ -8,19 +8,22 @@ import Nav from "../components/nav/nav";
 import Projects from "../components/projects/projects";
 import Sidebar from "../components/sidebar/sidebar";
 import styles from "../styles/Home.module.css";
+import { AnimatePresence } from "framer-motion";
 
 export default function Home() {
   return (
-    <div className={styles.container}>
-      <Head>
-        <title>Nirjhor Nath</title>
-      </Head>
-      <Sidebar />
-      <Nav />
-      <Hero />
-      <Projects />
-      <About />
-      <Footer />
-    </div>
+    <AnimatePresence>
+      <div className={styles.container}>
+        <Head>
+          <title>Nirjhor Nath</title>
+        </Head>
+        <Sidebar />
+        <Nav />
+        <Hero />
+        <Projects />
+        <About />
+        <Footer />
+      </div>
+    </AnimatePresence>
   );
 }
