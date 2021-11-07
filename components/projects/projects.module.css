@@ -1,0 +1,14 @@
+.container {
+  margin-top: 20vh;
+}
+
+.heading {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 3.5rem;
+  text-transform: uppercase;
+}
+
+.bracket {
+  color: #49ff92;
+}

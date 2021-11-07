@@ -1,0 +1,61 @@
+.root {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 5%;
+  overflow-x: hidden;
+}
+
+.image {
+  display: flex;
+  flex: 1;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  flex: 3;
+}
+
+.containLeft {
+  align-items: flex-start;
+}
+
+.containRight {
+  align-items: flex-end;
+}
+
+.title {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 2rem;
+  margin: 0 0 2vh 0;
+}
+
+.description {
+  background: #121212;
+  z-index: 1;
+}
+
+.overflowLeft {
+  margin-right: -30px;
+}
+
+.overflowRight {
+  margin-left: -30px;
+}
+
+.description p {
+  padding: 2vh 2vh 2vh 2vh;
+}
+
+.technologies {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1rem;
+  text-align: right;
+  color: #b3b3b3;
+}

@@ -1,0 +1,19 @@
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.link {
+  color: white;
+}
+
+.linkNumber {
+  color: #49ff92;
+}
+
+.linkContainer {
+  display: flex;
+  justify-content: space-evenly;
+  width: 40%;
+}
