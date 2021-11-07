@@ -6,14 +6,15 @@
 
 .link {
   color: white;
+  margin-left: 12vh;
 }
 
 .linkNumber {
   color: #49ff92;
+  font-size: 0.8rem;
 }
 
 .linkContainer {
   display: flex;
   justify-content: space-evenly;
-  width: 40%;
 }

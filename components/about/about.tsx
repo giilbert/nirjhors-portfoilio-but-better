@@ -6,11 +6,14 @@ interface AboutProps {}
 
 const About: React.FC<AboutProps> = ({}) => {
   return (
-    <div className={styles.root}>
-      <h3 className={styles.heading}>
-        <span className={styles.bracket}>&lt;</span>Who I Am
-        <span className={styles.bracket}>/&gt;</span>
-      </h3>
+    <div className={styles.root} id="about">
+      <div className={styles.headingContainer}>
+        <div className={styles.headingBorder} />
+        <h3 className={styles.heading}>
+          <span className={styles.bracket}>&lt;</span>Who I Am
+          <span className={styles.bracket}>/&gt;</span>
+        </h3>
+      </div>
       <div className={styles.container}>
         <Image
           src="/man.jpg"

@@ -5,6 +5,7 @@ body {
   font-family: Inter;
   background: #000000;
   color: white;
+  scroll-behavior: smooth;
 }
 
 a {

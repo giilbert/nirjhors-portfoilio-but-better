@@ -10,21 +10,27 @@ const Hero: React.FC<HeroProps> = ({}) => {
       <div>
         <div className={styles.text}>
           <h4>
-            hi, i'm <span>nirjhor</span>
+            hi, i&apos;m <span>nirjhor</span>
           </h4>
           <h1>
-            i'm building interactive <br /> web apps
+            i&apos;m building interactive <br /> web apps
           </h1>
           <h3>
-            I'm a fullstack software engineer building functional <br /> web
-            apps
+            I&apos;m a fullstack software engineer building functional <br />
+            web apps
           </h3>
         </div>
-        <button className={styles.button}>Portfolio</button>
+        <a href="#projects">
+          <button className={styles.button}>Portfolio</button>
+        </a>
       </div>
-
       <div className={styles.image}>
-        <Image src="/hero-art.svg" width="430px" height="360px" />
+        <Image
+          src="/hero-art.svg"
+          width="430px"
+          height="360px"
+          alt="person coding"
+        />
       </div>
     </div>
   );

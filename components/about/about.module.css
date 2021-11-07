@@ -25,6 +25,7 @@
 .heading {
   display: flex;
   justify-content: flex-end;
+  align-items: center;
   font-style: normal;
   font-weight: 600;
   font-size: 3.5rem;
@@ -32,4 +33,17 @@
 
 .bracket {
   color: #49ff92;
+}
+
+.headingContainer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.headingBorder {
+  width: 300px;
+  height: 8px;
+
+  background: rgba(196, 196, 196, 0.29);
 }

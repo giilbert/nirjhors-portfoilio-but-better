@@ -46,6 +46,7 @@
   border: 1px solid #49ff92;
   border-radius: 10px;
   margin-top: 6vh;
+  cursor: pointer;
 }
 
 .image {

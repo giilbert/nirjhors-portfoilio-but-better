@@ -6,29 +6,32 @@ interface ProjectProps {}
 
 const Projects: React.FC<ProjectProps> = ({}) => {
   return (
-    <div className={styles.container}>
-      <h3 className={styles.heading}>
-        <span className={styles.bracket}>&lt;</span>What I've Done
-        <span className={styles.bracket}>/&gt;</span>
-      </h3>
+    <div className={styles.container} id="projects">
+      <div className={styles.headingContainer}>
+        <h3 className={styles.heading}>
+          <span className={styles.bracket}>&lt;</span>What I&apos;ve Done
+          <span className={styles.bracket}>/&gt;</span>
+        </h3>
+        <div className={styles.headingBorder} />
+      </div>
       <div className={styles.projects}>
         <Project
-          name="Coolest Project"
+          name="ArchiveCord"
           direction="right"
           description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin in vulputate dolor. In condimentum erat non sem consequat fringilla. Vivamus in molestie purus. Phasellus ullamcorper risus non odio elementum vulputate. "
-          technologies="React, ChakraUI, Nest, Javscript, Typescript"
+          technologies="NextJS, NextAuth, ChakraUI, Axios"
         />
         <Project
-          name="Coolest Project"
+          name="TechCodes"
           direction="left"
           description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin in vulputate dolor. In condimentum erat non sem consequat fringilla. Vivamus in molestie purus. Phasellus ullamcorper risus non odio elementum vulputate. "
-          technologies="React, ChakraUI, Nest, Javscript, Typescript"
+          technologies="GatsbyJS, ChakraUI, Framer-Motion"
         />
         <Project
-          name="Coolest Project"
+          name="LiteBot"
           direction="right"
           description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin in vulputate dolor. In condimentum erat non sem consequat fringilla. Vivamus in molestie purus. Phasellus ullamcorper risus non odio elementum vulputate. "
-          technologies="React, ChakraUI, Nest, Javscript, Typescript"
+          technologies="Discord.py, Sanic, Discord API"
         />
       </div>
     </div>

@@ -12,3 +12,16 @@
 .bracket {
   color: #49ff92;
 }
+
+.headingContainer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.headingBorder {
+  width: 300px;
+  height: 8px;
+
+  background: rgba(196, 196, 196, 0.29);
+}
