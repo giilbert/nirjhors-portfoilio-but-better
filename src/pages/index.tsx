@@ -3,12 +3,7 @@ import React from "react";
 import { Sidebar } from "../components/sidebar";
 
 const Index = () => {
-  return (
-    <Box>
-      <Sidebar />
-      <Box h="200vh"></Box>
-    </Box>
-  );
+  return <Box>Hi, this is Nirjhor</Box>;
 };
 
 export default Index;

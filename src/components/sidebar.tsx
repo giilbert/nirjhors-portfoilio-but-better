@@ -21,7 +21,7 @@ export const Sidebar: React.FC = ({}) => {
       flexDirection="column"
       alignItems="center"
       justifyContent="space-between"
-      padding="8% 0 8% 0"
+      padding="5% 0 5% 0"
       position="fixed"
     >
       <Image src="logo.svg" />
