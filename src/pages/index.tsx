@@ -1,11 +1,11 @@
 import { Heading, Box, Text } from "@chakra-ui/react";
 import React from "react";
+import { Sidebar } from "../components/sidebar";
 
 const Index = () => {
   return (
     <Box>
-      <Heading>My Work</Heading>
-      <Text>My Work</Text>
+      <Sidebar />
     </Box>
   );
 };
