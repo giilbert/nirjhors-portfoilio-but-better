@@ -22,6 +22,7 @@ export const Sidebar: React.FC = ({}) => {
       alignItems="center"
       justifyContent="space-between"
       padding="8% 0 8% 0"
+      position="fixed"
     >
       <Image src="logo.svg" />
       <VStack>

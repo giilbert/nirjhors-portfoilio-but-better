@@ -6,6 +6,7 @@ const Index = () => {
   return (
     <Box>
       <Sidebar />
+      <Box h="200vh"></Box>
     </Box>
   );
 };
