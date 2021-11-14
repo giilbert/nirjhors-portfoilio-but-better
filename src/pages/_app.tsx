@@ -1,5 +1,6 @@
 import "@fontsource/inter";
 import "@fontsource/playfair-display";
+import "swiper/css";
 import { ChakraProvider } from "@chakra-ui/react";
 
 import theme from "../theme";

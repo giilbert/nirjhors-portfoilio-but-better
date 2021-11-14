@@ -11,8 +11,6 @@ export const Hero: React.FC = ({}) => {
       alignItems="center"
       justifyContent="space-between"
       h="100vh"
-      w="80%"
-      m="auto"
       flexDirection={{ base: "column", lg: "row" }}
       overflow="hidden"
     >

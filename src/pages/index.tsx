@@ -6,8 +6,9 @@ import Projects from "../components/projects";
 
 const Index = () => {
   return (
-    <Box h="200vh">
+    <Box width="80%" margin="auto">
       <Hero />
+      <Projects />
     </Box>
   );
 };
