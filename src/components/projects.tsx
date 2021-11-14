@@ -37,7 +37,7 @@ const Project: React.FC<{
               src={src}
               w="100%"
               h="100%"
-              transition="0.2s"
+              transition="0.3s ease"
               _groupHover={{
                 transform: "scale(1.1)",
                 filter: "brightness(0.5)",
@@ -47,8 +47,10 @@ const Project: React.FC<{
               position="absolute"
               textTransform="uppercase"
               fontSize={{ sm: "2.5vw", md: "1.2vw" }}
-              border="1px solid white"
-              borderRadius="50px"
+              border="1px solid"
+              borderColor="blue"
+              color="blue"
+              borderRadius="10px"
               padding="0px 6px"
               display="none"
               _groupHover={{ display: "flex !important" }}
@@ -80,7 +82,7 @@ const Project: React.FC<{
   </StylableSwiperSlide>
 );
 
-const Projects: React.FC = ({}) => {
+export const Projects: React.FC = ({}) => {
   const animation = useAnimation();
   const [ref, inView, entry] = useInView({ threshold: 0.1 });
 
@@ -97,7 +99,7 @@ const Projects: React.FC = ({}) => {
       y: 0,
       opacity: 1,
       transition: {
-        delay: 0.3,
+        delay: 0.2,
         duration: 0.5,
       },
     },
@@ -111,10 +113,10 @@ const Projects: React.FC = ({}) => {
     <MotionBox
       h="100vh"
       p="5% 0 5% 0"
-      ref={ref}
-      animate={animation}
-      initial="hidden"
-      variants={variants}
+      // ref={ref}
+      // animate={animation}
+      // initial="hidden"
+      // variants={variants}
     >
       <Box textTransform="uppercase">
         <Heading color="pink.200" fontWeight="normal" fontSize="6rem">
@@ -177,5 +179,3 @@ const Projects: React.FC = ({}) => {
     </MotionBox>
   );
 };
-
-export default Projects;
