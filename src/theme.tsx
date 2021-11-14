@@ -21,6 +21,11 @@ const theme = extendTheme({
     global: () => ({
       body: {
         backgroundColor: "bg.800",
+        "-ms-overflow-style": "none",
+        "scrollbar-width": "none",
+      },
+      "body::-webkit-scrollbar": {
+        display: "none",
       },
     }),
   },

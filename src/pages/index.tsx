@@ -1,11 +1,12 @@
-import { Heading, Box, Text } from "@chakra-ui/react";
-import React from "react";
+import { Box } from "@chakra-ui/react";
+import { useRouter } from "next/dist/client/router";
+import React, { useEffect } from "react";
 import { Hero } from "../components/hero";
-import { Sidebar } from "../components/sidebar";
+import Projects from "../components/projects";
 
 const Index = () => {
   return (
-    <Box>
+    <Box h="200vh">
       <Hero />
     </Box>
   );

@@ -13,7 +13,7 @@ export const Hero: React.FC = ({}) => {
       h="100vh"
       w="80%"
       m="auto"
-      flexDirection={{ sm: "column", lg: "row" }}
+      flexDirection={{ base: "column", lg: "row" }}
       overflow="hidden"
     >
       <MotionBox
@@ -22,7 +22,7 @@ export const Hero: React.FC = ({}) => {
         animate={{ y: 0 }}
         transition={{ delay: 0.3, ease: [0.7, 0, 0.07, 1], duration: 1.5 }}
       >
-        <Heading>
+        <Heading color="text">
           Hi, I'm{" "}
           <Box as="span" color="blue" fontWeight="normal">
             Nirjhor,
