@@ -12,10 +12,13 @@ import { withFade } from "../helpers/withFade";
 
 export const About: React.FC = withFade(() => {
   return (
-    <Box h={{ base: undefined, lg: "100vh" }} p="5% 0 5% 0">
+    <Box
+      h={{ base: undefined, md: undefined, lg: undefined, xl: "100vh" }}
+      p="5% 0 5% 0"
+    >
       <Heading
         textTransform="uppercase"
-        fontSize="6rem"
+        fontSize={{ sm: "2rem", md: "3rem", xl: "6rem" }}
         color="pink.200"
         fontWeight="normal"
       >
@@ -24,7 +27,7 @@ export const About: React.FC = withFade(() => {
       <Flex
         alignItems="center"
         mt="4rem"
-        flexDirection={{ base: "column", lg: "row" }}
+        flexDirection={{ base: "column-reverse", lg: "row" }}
       >
         <Stack flex="2" fontSize="1.8rem" spacing="2rem">
           <Text color="text">

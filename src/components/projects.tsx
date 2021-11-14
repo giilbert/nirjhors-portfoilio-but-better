@@ -7,6 +7,7 @@ import {
   Image,
   Link,
   Text,
+  useBreakpointValue,
 } from "@chakra-ui/react";
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -81,13 +82,26 @@ const Project: React.FC<{
 );
 
 export const Projects: React.FC = withFade(() => {
+  const slidesPerView = useBreakpointValue({ base: 1, sm: 1, md: 2, lg: 2.5 });
+
   return (
-    <Box h="100vh" p="5% 0 5% 0" id="projects">
+    <Box
+      h={{ base: undefined, md: undefined, lg: "100vh" }}
+      p="5% 0 5% 0"
+      id="projects"
+    >
       <Box textTransform="uppercase">
-        <Heading color="pink.200" fontWeight="normal" fontSize="6rem">
+        <Heading
+          color="pink.200"
+          fontWeight="normal"
+          fontSize={{ sm: "2rem", md: "3rem", xl: "6rem" }}
+        >
           my work
         </Heading>
-        <Flex justifyContent="space-between" alignItems="center">
+        <Flex
+          justifyContent="space-between"
+          flexDirection={{ base: "column", lg: "row" }}
+        >
           <Heading fontFamily="inter" fontWeight="500" color="pink.300">
             a curated list of my best work
           </Heading>
@@ -106,7 +120,7 @@ export const Projects: React.FC = withFade(() => {
         </Flex>
       </Box>
       <Box mt="4rem">
-        <Swiper spaceBetween={50} slidesPerView={2.5}>
+        <Swiper spaceBetween={50} slidesPerView={slidesPerView}>
           <SwiperSlide>
             <Project
               href="/portfolio/project"

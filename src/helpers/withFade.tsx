@@ -27,7 +27,7 @@ export const withFade = (Component: NextPage | React.FC) => (props) => {
       y: 0,
       opacity: 1,
       transition: {
-        delay: 0.2,
+        // delay: 0.2,
         duration: 0.5,
       },
     },
@@ -38,12 +38,7 @@ export const withFade = (Component: NextPage | React.FC) => (props) => {
   };
 
   return (
-    <MotionBox
-      ref={ref}
-      animate={animation}
-      initial="hidden"
-      variants={variants}
-    >
+    <MotionBox ref={ref} animate={animation} variants={variants}>
       <Component {...props} />
     </MotionBox>
   );
