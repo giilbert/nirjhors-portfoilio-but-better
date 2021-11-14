@@ -8,12 +8,10 @@ import {
   Link,
   Text,
 } from "@chakra-ui/react";
-import { motion, useAnimation } from "framer-motion";
-import React, { useEffect } from "react";
+import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { useInView } from "react-intersection-observer";
+import { withFade } from "../helpers/withFade";
 
-const MotionBox = motion(Box);
 const StylableSwiperSlide = chakra(SwiperSlide);
 
 const Project: React.FC<{
@@ -82,42 +80,9 @@ const Project: React.FC<{
   </StylableSwiperSlide>
 );
 
-export const Projects: React.FC = ({}) => {
-  const animation = useAnimation();
-  const [ref, inView, entry] = useInView({ threshold: 0.1 });
-
-  useEffect(() => {
-    if (inView) {
-      animation.start("visible");
-    } else {
-      animation.start("hidden");
-    }
-  }, [animation, inView]);
-
-  const variants = {
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        delay: 0.2,
-        duration: 0.5,
-      },
-    },
-    hidden: {
-      y: entry,
-      opacity: 0,
-    },
-  };
-
+export const Projects: React.FC = withFade(() => {
   return (
-    <MotionBox
-      h="100vh"
-      p="5% 0 5% 0"
-      // ref={ref}
-      // animate={animation}
-      // initial="hidden"
-      // variants={variants}
-    >
+    <Box h="100vh" p="5% 0 5% 0">
       <Box textTransform="uppercase">
         <Heading color="pink.200" fontWeight="normal" fontSize="6rem">
           my work
@@ -176,6 +141,6 @@ export const Projects: React.FC = ({}) => {
           </SwiperSlide>
         </Swiper>
       </Box>
-    </MotionBox>
+    </Box>
   );
-};
+});

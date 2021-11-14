@@ -1,7 +1,8 @@
 import { Text, Flex, Heading, Box, Link, Stack } from "@chakra-ui/react";
 import React from "react";
+import { withFade } from "../helpers/withFade";
 
-export const Contact: React.FC = ({}) => {
+export const Contact: React.FC = withFade(() => {
   return (
     <Flex h="100vh" p="5% 0 5% 0" flexDirection="column">
       <Heading
@@ -56,4 +57,4 @@ export const Contact: React.FC = ({}) => {
       </Flex>
     </Flex>
   );
-};
+});

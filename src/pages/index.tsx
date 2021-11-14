@@ -7,6 +7,13 @@ import { Hero } from "../components/hero";
 import { Projects } from "../components/projects";
 
 const Index = () => {
+  useEffect(() => {
+    window.addEventListener("beforeunload", () => {
+      if (window.localStorage.getItem("timestamp"))
+        window.localStorage.removeItem("timestamp");
+    });
+  }, []);
+
   return (
     <Box width="80%" margin="auto">
       <Hero />
