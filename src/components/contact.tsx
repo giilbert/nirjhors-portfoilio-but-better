@@ -32,13 +32,31 @@ export const Contact: React.FC = withFade(() => {
             also reach me through
           </Text>
           <Stack fontSize="2rem" color="pink.200">
-            <Link textDecoration="underline" textTransform="uppercase">
+            <Link
+              textDecoration="underline"
+              textTransform="uppercase"
+              href="https://twitter.com/iDarkThunder"
+              target="_blank"
+              _focus={{}}
+            >
               twitter
             </Link>
-            <Link textDecoration="underline" textTransform="uppercase">
+            <Link
+              textDecoration="underline"
+              textTransform="uppercase"
+              href="https://www.instagram.com/nirjhor.nath/"
+              target="_blank"
+              _focus={{}}
+            >
               instagram
             </Link>
-            <Link textDecoration="underline" textTransform="uppercase">
+            <Link
+              textDecoration="underline"
+              textTransform="uppercase"
+              href="https://www.github.com/iDarkLightning"
+              target="_blank"
+              _focus={{}}
+            >
               github
             </Link>
           </Stack>

@@ -18,7 +18,7 @@ export const Hero: React.FC = ({}) => {
         flex="3"
         initial={{ y: "200%" }}
         animate={{ y: 0 }}
-        transition={{ delay: 0.3, ease: [0.7, 0, 0.07, 1], duration: 1.5 }}
+        transition={{ delay: 1, ease: [0.7, 0, 0.07, 1], duration: 1.5 }}
       >
         <Heading color="text">
           Hi, I'm{" "}
@@ -51,7 +51,7 @@ export const Hero: React.FC = ({}) => {
         zIndex="-1"
         initial={{ y: "-200%" }}
         animate={{ y: 0 }}
-        transition={{ delay: 0.2, ease: [0.7, 0, 0.07, 1], duration: 1 }}
+        transition={{ delay: 0.9, ease: [0.7, 0, 0.07, 1], duration: 1 }}
       />
     </Flex>
   );

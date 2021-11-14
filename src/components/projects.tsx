@@ -82,7 +82,7 @@ const Project: React.FC<{
 
 export const Projects: React.FC = withFade(() => {
   return (
-    <Box h="100vh" p="5% 0 5% 0">
+    <Box h="100vh" p="5% 0 5% 0" id="projects">
       <Box textTransform="uppercase">
         <Heading color="pink.200" fontWeight="normal" fontSize="6rem">
           my work

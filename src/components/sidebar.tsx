@@ -28,12 +28,12 @@ export const Sidebar: React.FC = ({}) => {
       position="fixed"
       initial={{ x: "-100%" }}
       animate={{ x: 0 }}
-      transition={{ delay: 0.4, ease: [0.7, 0, 0.07, 1], duration: 1.5 }}
+      transition={{ delay: 0.9, ease: [0.7, 0, 0.07, 1], duration: 1.5 }}
     >
       <SVGLink to="/" src="logo.svg" alt="Logo"></SVGLink>
       <VStack>
         <SVGLink
-          to="/portfolio"
+          to="#projects"
           src="icons/portfolio.svg"
           alt="To Portfolio Page"
         />
