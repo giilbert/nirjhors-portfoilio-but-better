@@ -24,7 +24,7 @@ export const Sidebar: React.FC = ({}) => {
       padding="5% 0 5% 0"
       position="fixed"
     >
-      <Image src="logo.svg" />
+      <SVGLink to="/" src="logo.svg" alt="Logo"></SVGLink>
       <VStack>
         <SVGLink
           to="/portfolio"
