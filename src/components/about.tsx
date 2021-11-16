@@ -12,10 +12,7 @@ import { withFade } from "../helpers/withFade";
 
 export const About: React.FC = withFade(() => {
   return (
-    <Box
-      h={{ base: undefined, md: undefined, lg: undefined, xl: "100vh" }}
-      p="5% 0 5% 0"
-    >
+    <Box h="max(100vh, 100%)" p="5% 0 5% 0">
       <Heading
         textTransform="uppercase"
         fontSize={{ sm: "2rem", md: "3rem", xl: "6rem" }}

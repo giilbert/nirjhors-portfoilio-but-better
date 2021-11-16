@@ -4,17 +4,23 @@ import { withFade } from "../helpers/withFade";
 
 export const Contact: React.FC = withFade(() => {
   return (
-    <Flex h="100vh" p="5% 0 5% 0" flexDirection="column">
+    <Flex h="max(100%, 100vh)" p="5% 0 5% 0" flexDirection="column">
       <Heading
         fontWeight="normal"
         textTransform="uppercase"
         color="pink.200"
-        fontSize="8rem"
+        fontSize={{ sm: "2rem", md: "3rem", lg: "6rem", xl: "8rem" }}
       >
         let's get in touch
       </Heading>
       <Text
-        fontSize="5rem"
+        fontSize={{
+          base: "1rem",
+          sm: "2rem",
+          md: "2rem",
+          lg: "4rem",
+          xl: "5rem",
+        }}
         textTransform="uppercase"
         textDecoration="underline"
         color="pink.300"

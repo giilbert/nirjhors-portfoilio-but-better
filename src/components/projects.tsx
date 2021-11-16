@@ -85,11 +85,7 @@ export const Projects: React.FC = withFade(() => {
   const slidesPerView = useBreakpointValue({ base: 1, sm: 1, md: 2, lg: 2.5 });
 
   return (
-    <Box
-      h={{ base: undefined, md: undefined, lg: "100vh" }}
-      p="5% 0 5% 0"
-      id="projects"
-    >
+    <Box h="max(100vh, 100%)" p="5% 0 5% 0" id="projects">
       <Box textTransform="uppercase">
         <Heading
           color="pink.200"
@@ -120,7 +116,11 @@ export const Projects: React.FC = withFade(() => {
         </Flex>
       </Box>
       <Box mt="4rem">
-        <Swiper spaceBetween={50} slidesPerView={slidesPerView}>
+        <Swiper
+          spaceBetween={50}
+          slidesPerView={slidesPerView}
+          mousewheel={{ invert: true }}
+        >
           <SwiperSlide>
             <Project
               href="/portfolio/project"

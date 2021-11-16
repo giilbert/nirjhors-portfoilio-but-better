@@ -10,9 +10,10 @@ export const Hero: React.FC = ({}) => {
     <Flex
       alignItems="center"
       justifyContent="space-between"
-      h="100vh"
+      minH="100vh"
       flexDirection={{ base: "column", lg: "row" }}
       overflow="hidden"
+      p="5% 0 5% 0"
     >
       <MotionBox
         flex="3"
@@ -32,7 +33,8 @@ export const Hero: React.FC = ({}) => {
           fontFamily="inter"
           fontStyle="normal"
           fontWeight="500"
-          fontSize={{ sm: "2rem", md: "3rem", xl: "6rem" }}
+          fontSize="5vmax"
+          // fontSize={{ sm: "2rem", md: "3rem", xl: "6rem" }}
         >
           full stack developer building{" "}
           <Box as="span" color="pink.400" textDecoration="underline">
@@ -48,6 +50,7 @@ export const Hero: React.FC = ({}) => {
         opacity="70%"
         minW="25rem"
         ml={{ sm: null, lg: "-10vw" }}
+        mt={{ base: "-10vw", sm: "-10vw", lg: null }}
         zIndex="-1"
         initial={{ y: "-200%" }}
         animate={{ y: 0 }}
