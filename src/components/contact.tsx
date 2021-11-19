@@ -4,40 +4,30 @@ import { withFade } from "../helpers/withFade";
 
 export const Contact: React.FC = withFade(() => {
   return (
-    <Flex h="max(100%, 100vh)" p="5% 0 5% 0" flexDirection="column">
+    <Flex
+      minH={{ base: undefined, xl: "100vh" }}
+      p="5% 0 5% 0"
+      flexDirection="column"
+    >
       <Heading
         fontWeight="normal"
         textTransform="uppercase"
         color="pink.200"
-        fontSize={{ sm: "2rem", md: "3rem", lg: "6rem", xl: "8rem" }}
+        fontSize="5vmax"
       >
         let's get in touch
       </Heading>
       <Text
-        fontSize={{
-          base: "1rem",
-          sm: "2rem",
-          md: "2rem",
-          lg: "4rem",
-          xl: "5rem",
-        }}
+        fontSize="3vmax"
         textTransform="uppercase"
         textDecoration="underline"
         color="pink.300"
       >
         nirjhor.nath@gmail.com
       </Text>
-      <Flex
-        w="85%"
-        justifyContent="space-between"
-        alignItems="flex-start"
-        mt="4rem"
-      >
+      <Flex justifyContent="space-between" alignItems="flex-start" mt="4rem">
         <Box>
-          <Text textTransform="uppercase" color="pink.200" fontSize="2rem">
-            also reach me through
-          </Text>
-          <Stack fontSize="2rem" color="pink.200">
+          <Stack fontSize="2.5vmax" color="pink.200">
             <Link
               textDecoration="underline"
               textTransform="uppercase"
@@ -72,10 +62,11 @@ export const Contact: React.FC = withFade(() => {
             maxW="20rem"
             textTransform="uppercase"
             color="pink.200"
-            fontSize="1.3rem"
+            fontSize="clamp(0.5rem, 2.5vmax, 1.2rem)"
           >
             designed & built by Nirjhor Nath. Liked the site? Well, i just
-            happen to have a guestbook
+            happen to have a guestbook. definetly did not copy this footer from{" "}
+            <Link href="https://kyryloorlov.com">here</Link>
           </Text>
         </Box>
       </Flex>

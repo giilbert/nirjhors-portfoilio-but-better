@@ -21,8 +21,9 @@ const theme = extendTheme({
     global: () => ({
       body: {
         backgroundColor: "bg.800",
-        "-ms-overflow-style": "none",
-        "scrollbar-width": "none",
+        msOverflowStyle: "none",
+        scrollbarWidth: "none",
+        height: "100%",
       },
       "body::-webkit-scrollbar": {
         display: "none",

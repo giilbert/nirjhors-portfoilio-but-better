@@ -1,5 +1,5 @@
 import { Flex, Image, Link, VStack } from "@chakra-ui/react";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import React from "react";
 
 const MotionFlex = motion(Flex);
@@ -15,8 +15,9 @@ const SVGLink: React.FC<{
   </Link>
 );
 
-export const Sidebar: React.FC = ({}) => {
+export const Sidebar: React.FC<{ delay: number }> = ({ delay }) => {
   return (
+    // <AnimatePresence>
     <MotionFlex
       w="4rem"
       h="100vh"
@@ -28,7 +29,7 @@ export const Sidebar: React.FC = ({}) => {
       position="fixed"
       initial={{ x: "-100%" }}
       animate={{ x: 0 }}
-      transition={{ delay: 0.9, ease: [0.7, 0, 0.07, 1], duration: 1.5 }}
+      transition={{ delay, ease: [0.7, 0, 0.07, 1], duration: 1.5 }}
     >
       <SVGLink to="/" src="logo.svg" alt="Logo"></SVGLink>
       <VStack>
@@ -61,5 +62,6 @@ export const Sidebar: React.FC = ({}) => {
         />
       </VStack>
     </MotionFlex>
+    // </AnimatePresence>
   );
 };

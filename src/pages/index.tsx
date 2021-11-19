@@ -39,7 +39,7 @@ const Index = () => {
             transition={{ delay: 0.1, ease: [0.7, 0, 0.07, 1], duration: 1.5 }}
           />
           <Layout>
-            <Box width="80%" margin="auto">
+            <Box width={{ base: "90%", sm: "90%", md: "80%" }} margin="auto">
               <Hero />
               <Projects />
               <About />

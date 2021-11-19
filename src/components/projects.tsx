@@ -1,104 +1,42 @@
 import {
   Box,
   Button,
-  chakra,
   Flex,
   Heading,
-  Image,
-  Link,
-  Text,
+  Stack,
   useBreakpointValue,
 } from "@chakra-ui/react";
 import React from "react";
+import SwiperCore, { Mousewheel, EffectCoverflow, Autoplay } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { withFade } from "../helpers/withFade";
+import { Project } from "./project";
 
-const StylableSwiperSlide = chakra(SwiperSlide);
-
-const Project: React.FC<{
-  href: string;
-  src: string;
-  name: string;
-  stack: string;
-}> = ({ href, src, name, stack }) => (
-  <StylableSwiperSlide>
-    <Box>
-      <Link href={href}>
-        <Box role="group">
-          <Flex
-            overflow="hidden"
-            alignItems="center"
-            justifyContent="center"
-            transition="0.2s"
-            _groupHover={{ borderRadius: "10px" }}
-          >
-            <Image
-              src={src}
-              w="100%"
-              h="100%"
-              transition="0.3s ease"
-              _groupHover={{
-                transform: "scale(1.1)",
-                filter: "brightness(0.5)",
-              }}
-            />
-            <Text
-              position="absolute"
-              textTransform="uppercase"
-              fontSize={{ sm: "2.5vw", md: "1.2vw" }}
-              border="1px solid"
-              borderColor="blue"
-              color="blue"
-              borderRadius="10px"
-              padding="0px 6px"
-              display="none"
-              _groupHover={{ display: "flex !important" }}
-            >
-              Explore
-            </Text>
-          </Flex>
-        </Box>
-      </Link>
-      <Box mt="2rem">
-        <Heading
-          fontSize="3rem"
-          textTransform="uppercase"
-          color="pink.200"
-          fontWeight="normal"
-        >
-          {name}
-        </Heading>
-        <Heading
-          fontWeight="normal"
-          color="blue"
-          fontFamily="inter"
-          fontSize="1.3rem"
-        >
-          {stack}
-        </Heading>
-      </Box>
-    </Box>
-  </StylableSwiperSlide>
-);
+SwiperCore.use([Mousewheel, EffectCoverflow]);
 
 export const Projects: React.FC = withFade(() => {
   const slidesPerView = useBreakpointValue({ base: 1, sm: 1, md: 2, lg: 2.5 });
+  const useSlider = useBreakpointValue({
+    base: false,
+    xl: true,
+  });
 
   return (
-    <Box h="max(100vh, 100%)" p="5% 0 5% 0" id="projects">
+    <Box minH={{ base: undefined, xl: "100vh" }} p="5% 0 5% 0" id="projects">
       <Box textTransform="uppercase">
-        <Heading
-          color="pink.200"
-          fontWeight="normal"
-          fontSize={{ sm: "2rem", md: "3rem", xl: "6rem" }}
-        >
+        <Heading color="pink.200" fontWeight="normal" fontSize="5vmax">
           my work
         </Heading>
         <Flex
           justifyContent="space-between"
           flexDirection={{ base: "column", lg: "row" }}
         >
-          <Heading fontFamily="inter" fontWeight="500" color="pink.300">
+          <Heading
+            fontFamily="inter"
+            fontWeight="500"
+            color="pink.300"
+            fontSize="2.5vmax"
+          >
             a curated list of my best work
           </Heading>
           <Button
@@ -115,45 +53,89 @@ export const Projects: React.FC = withFade(() => {
           </Button>
         </Flex>
       </Box>
-      <Box mt="4rem">
-        <Swiper
-          spaceBetween={50}
-          slidesPerView={slidesPerView}
-          mousewheel={{ invert: true }}
-        >
-          <SwiperSlide>
+      <Box mt="2rem">
+        {useSlider ? (
+          <Swiper
+            effect="coverflow"
+            coverflowEffect={{
+              rotate: 0,
+              slideShadows: false,
+            }}
+            spaceBetween={50}
+            centeredSlides={true}
+            slidesPerView={slidesPerView}
+            direction="horizontal"
+            pagination={{ clickable: true }}
+            mousewheel={true}
+            initialSlide={1}
+          >
+            <SwiperSlide className="swiperSlide">
+              <Project
+                href="/portfolio/project"
+                src="project-image.jpg"
+                name="project"
+                stack="Typescript, NextJS, Chakra-UI"
+              />
+            </SwiperSlide>
+            <SwiperSlide>
+              <Project
+                href="/portfolio/project"
+                src="project-image.jpg"
+                name="project"
+                stack="Typescript, NextJS, Chakra-UI"
+              />
+            </SwiperSlide>
+            <SwiperSlide>
+              <Project
+                href="/portfolio/project"
+                src="project-image.jpg"
+                name="project"
+                stack="Typescript, NextJS, Chakra-UI"
+              />
+            </SwiperSlide>
+            <SwiperSlide>
+              <Project
+                href="/portfolio/project"
+                src="project-image.jpg"
+                name="project"
+                stack="Typescript, NextJS, Chakra-UI"
+              />
+            </SwiperSlide>
+          </Swiper>
+        ) : (
+          <Stack>
             <Project
               href="/portfolio/project"
               src="project-image.jpg"
               name="project"
               stack="Typescript, NextJS, Chakra-UI"
             />
-          </SwiperSlide>
-          <SwiperSlide>
             <Project
               href="/portfolio/project"
               src="project-image.jpg"
               name="project"
               stack="Typescript, NextJS, Chakra-UI"
             />
-          </SwiperSlide>
-          <SwiperSlide>
             <Project
               href="/portfolio/project"
               src="project-image.jpg"
               name="project"
               stack="Typescript, NextJS, Chakra-UI"
             />
-          </SwiperSlide>
-          <SwiperSlide>
             <Project
               href="/portfolio/project"
               src="project-image.jpg"
               name="project"
               stack="Typescript, NextJS, Chakra-UI"
             />
-          </SwiperSlide>
-        </Swiper>
+            <Project
+              href="/portfolio/project"
+              src="project-image.jpg"
+              name="project"
+              stack="Typescript, NextJS, Chakra-UI"
+            />
+          </Stack>
+        )}
       </Box>
     </Box>
   );

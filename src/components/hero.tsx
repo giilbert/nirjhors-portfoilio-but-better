@@ -10,7 +10,7 @@ export const Hero: React.FC = ({}) => {
     <Flex
       alignItems="center"
       justifyContent="space-between"
-      minH="100vh"
+      minH={{ base: undefined, xl: "100vh" }}
       flexDirection={{ base: "column", lg: "row" }}
       overflow="hidden"
       p="5% 0 5% 0"
@@ -46,11 +46,10 @@ export const Hero: React.FC = ({}) => {
       <MotionImage
         flex="1"
         src="hero-image.jpg"
-        h="60%"
         opacity="70%"
         minW="25rem"
         ml={{ sm: null, lg: "-10vw" }}
-        mt={{ base: "-10vw", sm: "-10vw", lg: null }}
+        mt={{ base: "-8rem", sm: "-8rem", md: null, lg: null, xl: null }}
         zIndex="-1"
         initial={{ y: "-200%" }}
         animate={{ y: 0 }}
