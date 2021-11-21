@@ -8,6 +8,7 @@ export const Contact: React.FC = withFade(() => {
       minH={{ base: undefined, xl: "100vh" }}
       p="5% 0 5% 0"
       flexDirection="column"
+      id="contact"
     >
       <Heading
         fontWeight="normal"

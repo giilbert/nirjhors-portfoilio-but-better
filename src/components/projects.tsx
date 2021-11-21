@@ -7,12 +7,12 @@ import {
   useBreakpointValue,
 } from "@chakra-ui/react";
 import React from "react";
-import SwiperCore, { Mousewheel, EffectCoverflow, Autoplay } from "swiper";
+import SwiperCore, { EffectCoverflow, Mousewheel, Navigation } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { withFade } from "../helpers/withFade";
 import { Project } from "./project";
 
-SwiperCore.use([Mousewheel, EffectCoverflow]);
+SwiperCore.use([Navigation, EffectCoverflow]);
 
 export const Projects: React.FC = withFade(() => {
   const slidesPerView = useBreakpointValue({ base: 1, sm: 1, md: 2, lg: 2.5 });
@@ -66,7 +66,7 @@ export const Projects: React.FC = withFade(() => {
             slidesPerView={slidesPerView}
             direction="horizontal"
             pagination={{ clickable: true }}
-            mousewheel={true}
+            navigation={true}
             initialSlide={1}
           >
             <SwiperSlide className="swiperSlide">

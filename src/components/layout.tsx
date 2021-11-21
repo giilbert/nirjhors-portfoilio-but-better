@@ -14,7 +14,7 @@ export const Layout: React.FC = ({ children }) => {
   const sidebarDrawer = useBreakpointValue({ base: true, sm: true, md: false });
   const sidebar = useDisclosure();
 
-  // useEffect(() => window.addEventListener("scroll", sidebar.onClose), []);
+  useEffect(() => window.addEventListener("scroll", sidebar.onClose), []);
 
   return (
     <>
@@ -24,6 +24,7 @@ export const Layout: React.FC = ({ children }) => {
           {!sidebar.isOpen && (
             <IconButton
               icon={<HamburgerIcon />}
+              borderRadius="0"
               aria-label="view sidebar"
               color="white"
               bgColor="bg.900"

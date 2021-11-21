@@ -10,7 +10,7 @@ export const Hero: React.FC = ({}) => {
     <Flex
       alignItems="center"
       justifyContent="space-between"
-      minH={{ base: undefined, xl: "100vh" }}
+      height="100vh"
       flexDirection={{ base: "column", lg: "row" }}
       overflow="hidden"
       p="5% 0 5% 0"

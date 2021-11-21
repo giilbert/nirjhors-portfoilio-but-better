@@ -38,8 +38,8 @@ export const Sidebar: React.FC<{ delay: number }> = ({ delay }) => {
           src="icons/portfolio.svg"
           alt="To Portfolio Page"
         />
-        <SVGLink to="/about" src="icons/about.svg" alt="To About Page" />
-        <SVGLink to="/contact" src="icons/contact.svg" alt="Contact Me" />
+        <SVGLink to="#about" src="icons/about.svg" alt="To About Page" />
+        <SVGLink to="#contact" src="icons/contact.svg" alt="Contact Me" />
       </VStack>
       <VStack>
         <SVGLink

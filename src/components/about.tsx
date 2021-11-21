@@ -12,7 +12,7 @@ import { withFade } from "../helpers/withFade";
 
 export const About: React.FC = withFade(() => {
   return (
-    <Box minH={{ base: undefined, xl: "100vh" }} p="5% 0 5% 0">
+    <Box minH={{ base: undefined, xl: "100vh" }} p="5% 0 5% 0" id="about">
       <Heading
         textTransform="uppercase"
         fontSize="5vmax"
@@ -28,19 +28,10 @@ export const About: React.FC = withFade(() => {
       >
         <Stack flex="2" fontSize="clamp(1.5rem, 1.8vmax, 2rem)" spacing="2rem">
           <Text color="text">
-            Hello! My name is Charlus Dogun Worth, and I saved the world at the
-            age of 5. Shortly afterwards, I invented the concept of time and
-            space. By the age of 10, i won four nobel prize awards for services
-            to the galaxy. by the age of 14, i was the first human to set foot
-            on mars.
+            Hello! My name is Nirjhor Nath, and I'm a full stack developer who
+            enjoys creating interactive web applications
           </Text>
-          <Text color="text">
-            Hello! My name is Charlus Dogun Worth, and I saved the world at the
-            age of 5. Shortly afterwards, I invented the concept of time and
-            space. By the age of 10, i won four nobel prize awards for services
-            to the galaxy. by the age of 14, i was the first human to set foot
-            on mars.
-          </Text>
+          <Text color="text"></Text>
         </Stack>
         <Box flex="2" mb="4rem">
           <Center>
