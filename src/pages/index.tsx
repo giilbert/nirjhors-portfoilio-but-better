@@ -1,3 +1,5 @@
+import { Sidebar } from "../components/sidebar";
+
 export default () => {
-  return <div />;
+  return <Sidebar />;
 };

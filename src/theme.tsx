@@ -1,30 +1,20 @@
 import { extendTheme } from "@chakra-ui/react";
-import { createBreakpoints } from "@chakra-ui/theme-tools";
 
 const fonts = { heading: "Poppins", body: "Poppins" };
 
 const theme = extendTheme({
   colors: {
-    bg: {
-      800: "#040305",
-      900: "#181818",
-    },
-    accent: "#CE0045",
-    pink: {
-      200: "#E9C8D0",
-      300: "#E9C8D0",
-      400: "#FC8DA7",
-    },
-    text: "#FFF",
+    text: "#fff",
+    bg: "#04080D",
   },
   styles: {
     global: () => ({
       body: {
-        backgroundColor: "bg.800",
         msOverflowStyle: "none",
         scrollbarWidth: "none",
-        backgroundImage: "url(bg.png)",
-        height: "100%",
+        backgroundColor: "bg",
+        // background:
+        // "conic-gradient(from 138.23deg at 45.53% 46.22%, #04080D -1.62deg, #04080D 61.87deg, #04080D 147.39deg, #04080D 176.25deg, rgba(4, 8, 13, 0.984375) 339.36deg, #04080D 358.38deg, #04080D 421.87deg);",
       },
       "body::-webkit-scrollbar": {
         display: "none",
