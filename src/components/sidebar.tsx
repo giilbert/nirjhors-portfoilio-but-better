@@ -10,7 +10,10 @@ export const Sidebar: React.FC = () => {
       w="5rem"
       flexDir="column"
       alignItems="center"
+      zIndex={5000}
       justifyContent="space-between"
+      bgColor="rgba(4, 8, 13, 0.5)"
+      position="absolute"
     >
       <Text color="white" transform="rotate(-90deg)" minW="16rem">
         Nirjhor Nath
