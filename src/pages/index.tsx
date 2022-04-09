@@ -28,7 +28,8 @@ export default () => {
       e.preventDefault();
       if (progress && progress <= 0) return setProgress(null);
 
-      if (progress >= 4000 && e.deltaY > 0) return;
+      router.prefetch("/projects");
+      if (progress >= 4000 && e.deltaY > 0) return router.push("/projects");
 
       setProgress((p) => (e.deltaY > 0 ? p + 300 : p - 300));
     };
