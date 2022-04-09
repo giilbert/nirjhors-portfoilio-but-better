@@ -1,18 +1,18 @@
 import { extendTheme } from "@chakra-ui/react";
 import { createBreakpoints } from "@chakra-ui/theme-tools";
 
-const fonts = { heading: "Playfair Display", body: "Inter" };
+const fonts = { heading: "Poppins", body: "Poppins" };
 
 const theme = extendTheme({
   colors: {
     bg: {
-      800: "#1D1D1D",
+      800: "#040305",
       900: "#181818",
     },
-    blue: "#92FCEC",
+    accent: "#CE0045",
     pink: {
       200: "#E9C8D0",
-      300: "#FFB6B6",
+      300: "#E9C8D0",
       400: "#FC8DA7",
     },
     text: "#FFF",
@@ -23,6 +23,7 @@ const theme = extendTheme({
         backgroundColor: "bg.800",
         msOverflowStyle: "none",
         scrollbarWidth: "none",
+        backgroundImage: "url(bg.png)",
         height: "100%",
       },
       "body::-webkit-scrollbar": {
