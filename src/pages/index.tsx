@@ -1,98 +1,47 @@
-import {
-  Text,
-  Center,
-  Flex,
-  Heading,
-  HStack,
-  Image,
-  Link,
-  Box,
-  useBreakpointValue,
-} from "@chakra-ui/react";
-import { useEffect, useState } from "react";
-import { Sidebar } from "../components/sidebar";
+import { Box, Text, Flex, Heading } from "@chakra-ui/react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import { motion } from "framer-motion";
-import { useRouter } from "next/dist/client/router";
+import { useRef } from "react";
+import Marquee from "react-fast-marquee";
+import { Hero } from "../components/hero";
+import { Projects } from "../components/projects";
+import { Skill } from "../components/skill";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default () => {
-  const showSidebar = useBreakpointValue({ base: false, md: true });
-  const [progress, setProgress] = useState(null);
-  const router = useRouter();
-
-  useEffect(() => {
-    const handler = (e) => {
-      e.preventDefault();
-      if (progress && progress <= 0) return setProgress(null);
-
-      router.prefetch("/projects");
-      if (progress >= 4000 && e.deltaY > 0) return router.push("/projects");
-
-      setProgress((p) => (e.deltaY > 0 ? p + 300 : p - 300));
-    };
-
-    window.addEventListener("wheel", handler);
-
-    return () => window.removeEventListener("wheel", handler);
-  }, [progress]);
+  const entryRef = useRef<HTMLDivElement>(null);
+  const headingRef = useRef<HTMLDivElement>(null);
 
   return (
-    <>
-      <Flex flexDir="column" overflow="hidden">
-        {showSidebar && <Sidebar />}
-        <Box h="100vh">
-          <Flex
-            justifyContent="flex-end"
-            w="100%"
-            gap="3rem"
-            color="white"
-            p="3rem 4rem"
-          >
-            <Link>Work</Link>
-            <Link>About</Link>
-            <Link>Contact</Link>
-          </Flex>
-          <Center
-            w="100%"
-            flexDir="column"
-            color="white"
-            textTransform="uppercase"
-            gap="1rem"
-          >
-            <Heading
-              fontWeight="400"
-              fontSize="clamp(2rem, 4vmax, 6rem)"
-              zIndex={1}
-            >
-              Developing Tommorow
-            </Heading>
-            <HStack
-              transform={`scale(${progress >= 0 ? progress / 1000 + 1 : 1})`}
-              transition="transform ease-in 0.1s"
-            >
-              <Image
-                src="center-img.jpg"
-                w="clamp(8rem, 40vmax, 24rem)"
-                h="clamp(8rem, 40vmax, 24rem)"
-                borderRadius={`${!progress ? 50 : 50 - progress / 50}%`}
-                opacity="70%"
-                boxShadow="0 0 0.5rem 1rem #6f4c1c58, 0 0 1.8rem 2rem #6c441778"
-              />
-            </HStack>
-            <Center flexDir="column" gap="1.8rem">
-              <Heading fontWeight="400" fontSize="clamp(3rem, 5vmax, 6.5rem)">
-                Today
-              </Heading>
-              <Text fontFamily="Heading" fontSize="1.5rem">
-                Scroll
+    <Box>
+      <Hero entryRef={entryRef} headingRef={headingRef} />
+      <Projects entryRef={entryRef} headingRef={headingRef} />
+      <Flex h="50vh" color="white" flexDir="column">
+        <Flex h="100%" flexDir="column">
+          <Box p={{ base: "1rem 2rem", md: "4rem 8rem" }}>
+            <Heading fontSize="4.5vmax">Skills</Heading>
+            <Flex alignItems="center" justifyContent="space-between">
+              <Text fontSize="2vmax" mt={0}>
+                Technologies I've Worked With
               </Text>
-            </Center>
-          </Center>
-        </Box>
+            </Flex>
+          </Box>
+          <Marquee gradient={false} speed={80} style={{}}>
+            {[...Array(15)].map((_) => (
+              <Skill />
+            ))}
+          </Marquee>
+        </Flex>
       </Flex>
-    </>
+      <Flex h="100vh">
+        <Flex h="100%" flexDir="column" color="white">
+          <Box p={{ base: "1rem 2rem", md: "4rem 8rem" }}>
+            <Heading fontSize="4.5vmax">Me, Myself & I</Heading>
+          </Box>
+        </Flex>
+      </Flex>
+      <Flex h="100vh">contact</Flex>
+    </Box>
   );
 };

@@ -6,6 +6,7 @@ const theme = extendTheme({
   colors: {
     text: "#fff",
     bg: "#04080D",
+    accent: "#142745",
   },
   styles: {
     global: () => ({
@@ -13,6 +14,7 @@ const theme = extendTheme({
         msOverflowStyle: "none",
         scrollbarWidth: "none",
         // backgroundColor: "bg",
+        overflowX: "hidden",
         background:
           "linear-gradient(180deg, #040C16 0%, rgba(4, 8, 13, 0.95) 183.48%);",
         // background:
