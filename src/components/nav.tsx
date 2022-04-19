@@ -1,4 +1,3 @@
-import { HamburgerIcon } from "@chakra-ui/icons";
 import { Flex, HStack, Link, Text } from "@chakra-ui/react";
 import React from "react";
 
@@ -15,12 +14,12 @@ export const Nav: React.FC = () => {
       <Text color="white" minW="16rem">
         Nirjhor Nath
       </Text>
-      {/* <HStack color="white" spacing="3rem">
+      <HStack color="white" spacing="3rem">
         <Link>Work</Link>
         <Link>About</Link>
         <Link>Contact</Link>
-      </HStack> */}
-      <HamburgerIcon color="white" w="2.15rem" h="2.15rem" />
+      </HStack>
+      {/* <HamburgerIcon color="white" w="2.15rem" h="2.15rem" /> */}
     </Flex>
   );
 };
