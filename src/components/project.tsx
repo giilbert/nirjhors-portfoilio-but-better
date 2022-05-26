@@ -42,7 +42,6 @@ export const Project: React.FC<IProject> = ({ reverse }) => {
         minH="15rem"
         transition="filter 0.5s"
         _hover={{ filter: "brightness(100%)" }}
-        filter="brightness(60%)"
       />
       <Flex
         flex="1"
@@ -66,7 +65,7 @@ export const Project: React.FC<IProject> = ({ reverse }) => {
           </Text>
         </Stack>
         <Stack mt="2rem">
-          <Text color="accent" fontFamily="SF Mono">
+          <Text color="accent" fontFamily="Space Mono">
             Typescript Python Prisma NextJS
           </Text>
           <Button>Explore</Button>

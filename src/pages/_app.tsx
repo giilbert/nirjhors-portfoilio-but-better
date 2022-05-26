@@ -1,12 +1,10 @@
-import "@fontsource/inter";
-import "@fontsource/playfair-display";
-import "@fontsource/poppins";
-import "swiper/css";
 import { ChakraProvider } from "@chakra-ui/react";
-
-import theme from "../theme";
+import "@fontsource/poppins";
+import "@fontsource/space-mono";
 import { AppProps } from "next/app";
-import React, { useRef } from "react";
+import React from "react";
+import "swiper/css";
+import theme from "../theme";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (

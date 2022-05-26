@@ -52,7 +52,7 @@ export const Contact: React.FC = () => {
     >
       <Center h="100%" flexDir="column" gap="2rem">
         <Center flexDir="column">
-          <Text fontFamily="SF Mono" color="accent">
+          <Text fontFamily="Space Mono" color="accent">
             What Now?
           </Text>
           <Heading

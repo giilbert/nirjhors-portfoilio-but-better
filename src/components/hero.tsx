@@ -49,7 +49,7 @@ export const Hero: React.FC = () => {
         gap="1rem"
         ref={headingRef}
       >
-        <Text fontFamily="SF Mono" color="accent" fontSize="1rem">
+        <Text fontFamily="Space Mono" color="accent" fontSize="1rem">
           Hi, my name is Nirjhor
         </Text>
         <Heading

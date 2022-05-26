@@ -15,6 +15,7 @@
     "@fontsource/inter": "^4.5.0",
     "@fontsource/playfair-display": "^4.5.0",
     "@fontsource/poppins": "^4.5.5",
+    "@fontsource/space-mono": "^4.5.8",
     "@prismicio/client": "^6.4.3",
     "@prismicio/helpers": "^2.3.0",
     "@prismicio/react": "^2.4.0",
