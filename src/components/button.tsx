@@ -12,6 +12,8 @@ export const Button: React.FC<ButtonProps> = ({ children, ...props }) => {
       w="12rem"
       color="black"
       borderRadius={0}
+      border="0.2rem dotted"
+      borderColor="accent"
       fontWeight="regular"
       boxShadow="inset 0 0 0 0 white"
       transition="ease-out 0.5s"

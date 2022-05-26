@@ -46,7 +46,7 @@ export const Contact: React.FC = () => {
 
   return (
     <Box
-      h="100vh"
+      h={{ base: "60vh", lg: "100vh" }}
       ref={self}
       clipPath="polygon(0 100%, 100% 100%, 100% 100%, 0% 100%)"
     >
