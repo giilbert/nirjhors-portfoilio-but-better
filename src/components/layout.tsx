@@ -8,6 +8,7 @@ export const Layout: React.FC = ({ children }) => {
       marginInline="auto"
       justifyContent="center"
       maxWidth="100rem"
+      overflowX="hidden"
     >
       {children}
     </Flex>

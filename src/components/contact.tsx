@@ -56,7 +56,11 @@ export const Contact: React.FC = () => {
             What Now?
           </Text>
           <Heading
-            fontSize={{ base: "3.5rem", md: "6rem", xl: "9.25rem" }}
+            fontSize={{
+              base: "2.5rem",
+              md: "6rem",
+              xl: "9.25rem",
+            }}
             textTransform="uppercase"
           >
             Get in Touch
