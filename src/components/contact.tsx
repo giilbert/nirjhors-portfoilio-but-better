@@ -1,42 +1,103 @@
-import { Box, Flex, Heading, Stack } from "@chakra-ui/react";
-import Marquee from "react-fast-marquee";
+import {
+  Box,
+  Center,
+  Heading,
+  HStack,
+  Image,
+  Link,
+  Text,
+} from "@chakra-ui/react";
+import { useEffect, useRef } from "react";
+import { Button } from "./button";
+
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import { useRefs } from "../context";
+
+gsap.registerPlugin(ScrollTrigger);
+
+const SVGLink: React.FC<{
+  to: string;
+  src: string;
+  alt: string;
+  newTab?: boolean;
+}> = ({ to, src, alt, newTab }) => (
+  <Link href={to} target={newTab ? "_blank" : undefined}>
+    <Image src={src} alt={alt} />
+  </Link>
+);
 
 export const Contact: React.FC = () => {
-  return (
-    <Flex>
-      <Box p={{ base: "1rem 2rem", md: "4rem 8rem" }} w="100%" color="white">
-        <Heading fontSize="4.5vmax">Get in Touch</Heading>
-        <Flex mt="2rem" flexDir="column" gap="2rem" textTransform="uppercase">
-          <Stack>
-            <Heading textDecor="underline" fontSize="3vmax">
-              Email Me
-            </Heading>
-            <Heading fontWeight="regular" fontSize="5vmax">
-              nirjhor.nath@gmail.com
-            </Heading>
-          </Stack>
+  const self = useRef(null);
+  const { about } = useRefs();
 
-          <Stack>
-            <Heading textDecor="underline" fontSize="3vmax">
-              Or Find Me On
-            </Heading>
-            <Flex gap="2rem">
-              <Heading fontSize="3vmax" fontWeight="regular">
-                Instagram
-              </Heading>
-              <Heading fontSize="3vmax" fontWeight="regular">
-                Twitter
-              </Heading>
-              <Heading fontSize="3vmax" fontWeight="regular">
-                LinkedIn
-              </Heading>
-              <Heading fontSize="3vmax" fontWeight="regular">
-                GitHub
-              </Heading>
-            </Flex>
-          </Stack>
-        </Flex>
-      </Box>
-    </Flex>
+  useEffect(() => {
+    gsap.to(self.current, {
+      scrollTrigger: {
+        trigger: about.current,
+        start: "top top",
+        scrub: 1,
+      },
+      delay: 1,
+      duration: 1,
+      clipPath: "polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%",
+    });
+  }, []);
+
+  return (
+    <Box
+      h="100vh"
+      ref={self}
+      clipPath="polygon(0 100%, 100% 100%, 100% 100%, 0% 100%)"
+    >
+      <Center h="100%" flexDir="column" gap="2rem">
+        <Center flexDir="column">
+          <Text fontFamily="SF Mono" color="accent">
+            What Now?
+          </Text>
+          <Heading
+            fontSize={{ base: "3.5rem", md: "6rem", xl: "9.25rem" }}
+            textTransform="uppercase"
+          >
+            Get in Touch
+            <Box as="span" color="accent">
+              !
+            </Box>
+          </Heading>
+        </Center>
+        <Text maxW="60ch" textAlign="center" color="text.100">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam,
+        </Text>
+        <Button>Say Hello</Button>
+        <HStack>
+          <SVGLink
+            to="https://twitter.com/iDarkThunder"
+            src="icons/twitter.svg"
+            alt="To Twitter Page"
+            newTab
+          />
+          <SVGLink
+            to="https://www.instagram.com/nirjhor.nath/"
+            src="icons/instagram.svg"
+            alt="To Instagram Page"
+            newTab
+          />
+          <SVGLink
+            to="https://www.github.com/iDarkLightning"
+            src="icons/github.svg"
+            alt="To GitHub Page"
+            newTab
+          />
+          <SVGLink
+            to="https://www.linkedin.com/in/nirjhor-nath-b82317232/"
+            src="icons/linkedin.svg"
+            alt="To LinkedIn Page"
+            newTab
+          />
+        </HStack>
+      </Center>
+    </Box>
   );
 };

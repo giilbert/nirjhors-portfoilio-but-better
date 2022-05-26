@@ -1,28 +1,29 @@
-import { Box, Flex } from "@chakra-ui/react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import { useRef } from "react";
+import Head from "next/head";
 import { About } from "../components/about";
 import { Contact } from "../components/contact";
 import { Footer } from "../components/footer";
 import { Hero } from "../components/hero";
+import { Layout } from "../components/layout";
+import { Nav } from "../components/nav";
 import { Projects } from "../components/projects";
-import { Skills } from "../components/skills";
-
-gsap.registerPlugin(ScrollTrigger);
+import { RefProvider } from "../context";
 
 export default () => {
-  const entryRef = useRef<HTMLDivElement>(null);
-  const headingRef = useRef<HTMLDivElement>(null);
-
   return (
-    <Box>
-      <Hero entryRef={entryRef} headingRef={headingRef} />
-      <Projects entryRef={entryRef} headingRef={headingRef} />
-      <Skills />
-      <About />
-      <Contact />
-      <Footer />
-    </Box>
+    <>
+      <Head>
+        <title>Nirjhor Nath</title>
+      </Head>
+      <Layout>
+        <RefProvider>
+          <Nav />
+          <Hero />
+          <Projects />
+          <About />
+          <Contact />
+          <Footer />
+        </RefProvider>
+      </Layout>
+    </>
   );
 };
