@@ -1,13 +1,13 @@
 import { Box, Flex, Heading, Text } from "@chakra-ui/react";
-import { motion } from "framer-motion";
-import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import { useEffect } from "react";
 import { useRefs } from "../context";
+import { IHero } from "../query";
 
 gsap.registerPlugin(ScrollTrigger);
 
-export const Hero: React.FC = () => {
+export const Hero: React.FC<IHero> = ({ title, name, description }) => {
   const { projects, headingRef, imgRef } = useRefs();
 
   useEffect(() => {
@@ -50,22 +50,21 @@ export const Hero: React.FC = () => {
         ref={headingRef}
       >
         <Text fontFamily="Space Mono" color="accent" fontSize="1rem">
-          Hi, my name is Nirjhor
+          {name}
         </Text>
         <Heading
           fontSize={{ base: "3rem", lg: "5rem" }}
           textTransform="uppercase"
           maxWidth="25ch"
         >
-          I'm Developing Tommorow, Today
+          {title}
         </Heading>
         <Text
           color="text.100"
           fontSize={{ base: "1rem", lg: "1.25rem" }}
           maxWidth="64ch"
         >
-          I’m an aspiring software engineer, nurturing my love for technology by
-          developing software to facilitate exceptional digital experiences.
+          {description}
         </Text>
       </Flex>
       <Flex

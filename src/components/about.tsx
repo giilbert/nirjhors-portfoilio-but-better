@@ -4,33 +4,11 @@ import { SectionHeader } from "./section-header";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { useRefs } from "../context";
+import { IAbout } from "../query";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const DATA = [
-  `
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat.
-  `,
-  `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet,
-            consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-            exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat.`,
-  `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat.
-                
-            `,
-];
-
-export const About: React.FC = () => {
+export const About: React.FC<IAbout> = (props) => {
   const header = useRef(null);
   const text = useRef(null);
   const img = useRef(null);
@@ -81,17 +59,20 @@ export const About: React.FC = () => {
         gap="2rem"
         flexDir={{ base: "column", lg: "row" }}
       >
-        <Flex flex="1.8" flexDir="column" gap="1rem" ref={text}>
-          <Text>{DATA[0]}</Text>
-          <Text>{DATA[1]}</Text>
-          <Text>{DATA[2]}</Text>
-        </Flex>
+        <Flex
+          flex="1.8"
+          flexDir="column"
+          gap="1rem"
+          ref={text}
+          dangerouslySetInnerHTML={{ __html: props.aboutMe }}
+        />
         <Flex
           ref={img}
           flex="1"
-          background="url(me.jpg)"
+          background={`url(${props.headshot.url})`}
           backgroundSize="cover"
-          minH={{ base: "20rem", lg: null }}
+          w="400px"
+          h="600px"
         />
       </Flex>
     </Box>

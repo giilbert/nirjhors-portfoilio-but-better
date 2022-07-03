@@ -10,8 +10,8 @@ export const Nav: React.FC = () => {
       mt="2rem"
       alignItems="center"
       justifyContent="space-between"
-      initial={{ y: "-200%" }}
-      animate={{ y: 0 }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
       zIndex={2}
       transition={{
         delay: 1,
@@ -20,7 +20,6 @@ export const Nav: React.FC = () => {
       }}
     >
       <Image src="/logo.svg" />
-      <HamburgerIcon w="3rem" h="3rem" opacity="80%" />
     </MotionFlex>
   );
 };

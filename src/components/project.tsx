@@ -1,17 +1,17 @@
-import { Flex, Heading, Stack, Text } from "@chakra-ui/react";
+import { Box, Flex, Heading, Stack, Text } from "@chakra-ui/react";
 import { useEffect, useRef } from "react";
 import { Button } from "./button";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { useRefs } from "../context";
+import { IProject } from "../query";
 
 gsap.registerPlugin(ScrollTrigger);
 
-interface IProject {
-  reverse?: boolean;
-}
-
-export const Project: React.FC<IProject> = ({ reverse }) => {
+export const Project: React.FC<IProject & { reverse?: boolean }> = ({
+  reverse,
+  ...props
+}) => {
   const self = useRef();
   const { headingRef } = useRefs();
 
@@ -38,10 +38,12 @@ export const Project: React.FC<IProject> = ({ reverse }) => {
     >
       <Flex
         flex="1"
-        bg="url(/project.webp)"
+        bg={`url(${props.images[0].url})`}
+        sx={{ aspectRatio: "16 / 9" }}
         minH="15rem"
         transition="filter 0.5s"
         _hover={{ filter: "brightness(100%)" }}
+        backgroundSize="cover"
       />
       <Flex
         flex="1"
@@ -50,25 +52,19 @@ export const Project: React.FC<IProject> = ({ reverse }) => {
         color="text.200"
       >
         <Heading color="white" fontSize="2rem" fontWeight="medium">
-          Project
+          {props.name}
         </Heading>
-        <Stack spacing="2rem" mt={{ base: "1rem", lg: "2rem" }}>
-          <Text>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam,
-          </Text>
-          <Text>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam,
-          </Text>
-        </Stack>
+        <Flex
+          flexDir="column"
+          gap="2rem"
+          color="#e0e0e0ce"
+          dangerouslySetInnerHTML={{ __html: props.description }}
+        />
         <Stack mt="2rem">
           <Text color="accent" fontFamily="Space Mono">
-            Typescript Python Prisma NextJS
+            {props.stack}
           </Text>
-          <Button>Explore</Button>
+          {/* <Button>Explore</Button> */}
         </Stack>
       </Flex>
     </Flex>

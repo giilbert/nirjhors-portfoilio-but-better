@@ -8,7 +8,7 @@ interface ISectionHeader {
 export const SectionHeader: React.FC<ISectionHeader> = ({ title, sub }) => {
   return (
     <Flex pt="4rem" flexDir="column" gap="0.5rem">
-      <Heading fontSize="2.3rem" textTransform="uppercase" fontWeight="600">
+      <Heading fontSize="2.3rem" textTransform="uppercase" fontWeight="700">
         {title}
         <Box as="span" color="accent">
           .
