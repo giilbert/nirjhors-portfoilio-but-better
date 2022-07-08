@@ -32,7 +32,7 @@ export const Projects: React.FC<{ projects: IProject[] }> = ({ projects }) => {
       >
         <SectionHeader
           title="My Work"
-          sub="Some of the best projects I worked on"
+          sub="Some of the best projects I've worked on"
         />
       </Box>
       <Flex flexDir="column" gap="4rem" paddingTop="2rem">
