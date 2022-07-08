@@ -30,7 +30,10 @@ export const Projects: React.FC<{ projects: IProject[] }> = ({ projects }) => {
         ref={header}
         clipPath="polygon(0 100%, 100% 100%, 100% 100%, 0% 100%)"
       >
-        <SectionHeader title="My Work" sub="A curated list of my best work" />
+        <SectionHeader
+          title="My Work"
+          sub="Some of the best projects I worked on"
+        />
       </Box>
       <Flex flexDir="column" gap="4rem" paddingTop="2rem">
         {projects.map((project, index) => (
