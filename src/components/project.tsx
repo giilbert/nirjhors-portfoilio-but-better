@@ -51,13 +51,15 @@ export const Project: React.FC<IProject & { reverse?: boolean }> = ({
         justifyContent="space-between"
         color="text.200"
       >
-        <Heading color="white" fontSize="2rem" fontWeight="medium">
+        <Heading color="white" fontSize="2rem" fontWeight="700">
           {props.name}
+          <Box as="span" color="accent">
+            .
+          </Box>
         </Heading>
         <Flex
           flexDir="column"
           gap="2rem"
-          color="#e0e0e0ce"
           dangerouslySetInnerHTML={{ __html: props.description }}
         />
         <Stack mt="2rem">

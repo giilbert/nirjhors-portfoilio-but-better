@@ -4,7 +4,7 @@ const fonts = { heading: "Bitter", body: "Segoe UI" };
 
 const theme = extendTheme({
   colors: {
-    text: { 100: "#93ADB7", 200: "#E4E4E4" },
+    text: { 100: "#bfd2da", 200: "#E4E4E4" },
     bg: "#000000",
     accent: "#1DC8E2",
   },
@@ -16,7 +16,7 @@ const theme = extendTheme({
         overflowX: "hidden",
       },
       p: {
-        color: "#e0e0e0ce",
+        color: "#ffffffc8",
       },
     }),
   },
