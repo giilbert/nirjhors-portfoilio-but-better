@@ -97,9 +97,14 @@ export const Contact: React.FC<IContact> = (props) => {
           display="inline-block"
           href={`mailto:${props.email}`}
         >
-          <Center>Say Hello</Center>
+          <Center gap="0.5rem">
+            <Text fontWeight="600" color="black">
+              Say Hello
+            </Text>
+            <Image src="/wave-emoji.svg" w="1.5rem" />
+          </Center>
         </Link>
-        <HStack>
+        <HStack spacing="1rem">
           <SVGLink
             to={props.twitter}
             src="icons/twitter.svg"

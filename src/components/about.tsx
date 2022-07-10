@@ -1,4 +1,4 @@
-import { Box, Flex, Text } from "@chakra-ui/react";
+import { Box, Flex, Image } from "@chakra-ui/react";
 import { useRef, useEffect } from "react";
 import { SectionHeader } from "./section-header";
 import gsap from "gsap";
@@ -66,12 +66,12 @@ export const About: React.FC<IAbout> = (props) => {
           ref={text}
           dangerouslySetInnerHTML={{ __html: props.aboutMe }}
         />
-        <Flex
+        <Image
           ref={img}
           flex="1"
-          background={`url(${props.headshot.url})`}
-          backgroundSize="cover"
-          w="400px"
+          src={props.headshot.url}
+          objectFit="cover"
+          w="100%"
           h="600px"
         />
       </Flex>
