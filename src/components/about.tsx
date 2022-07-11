@@ -57,7 +57,7 @@ export const About: React.FC<IAbout> = (props) => {
       <Flex
         paddingTop="2rem"
         gap="2rem"
-        flexDir={{ base: "column", lg: "row" }}
+        flexDir={{ base: "column-reverse", lg: "row" }}
       >
         <Flex
           flex="1.8"
