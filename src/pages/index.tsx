@@ -68,30 +68,28 @@ const Page: NextPage<{ query: IQuery }> = ({ query }) => {
         <meta content={query.hero.description} property="og:description" />
         <meta content="#1DC8E2" data-react-helmet="true" name="theme-color" />
       </Head>
-      <AnimatePresence>
-        {!loading ? (
-          <Layout>
-            <RefProvider>
-              <Nav />
-              <Hero {...query.hero} />
-              <Projects projects={query.allProjects} />
-              <About {...query.about} />
-              <Contact {...query.contact} />
-              <Footer />
-            </RefProvider>
-          </Layout>
-        ) : (
-          <MotionBox
-            key="loading"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ opacity: { duration: 1 } }}
-          >
-            <Loading />
-          </MotionBox>
-        )}
-      </AnimatePresence>
+      {!loading ? (
+        <Layout>
+          <RefProvider>
+            <Nav />
+            <Hero {...query.hero} />
+            <Projects projects={query.allProjects} />
+            <About {...query.about} />
+            <Contact {...query.contact} />
+            <Footer />
+          </RefProvider>
+        </Layout>
+      ) : (
+        <MotionBox
+          key="loading"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ opacity: { duration: 1 } }}
+        >
+          <Loading />
+        </MotionBox>
+      )}
     </>
   );
 };
