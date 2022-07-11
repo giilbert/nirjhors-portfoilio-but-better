@@ -1,10 +1,12 @@
 import gsap from "gsap";
-import { Box, Flex, Heading, Text, Image } from "@chakra-ui/react";
+import { Box, Flex, Heading, Icon, Text } from "@chakra-ui/react";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { useEffect } from "react";
 import { useRefs } from "../context";
 import { IHero } from "../query";
 import { motion } from "framer-motion";
+import { Button } from "./button";
+import { ChevronDownIcon } from "@chakra-ui/icons";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -70,28 +72,14 @@ export const Hero: React.FC<IHero> = ({ title, name, description }) => {
         >
           {description}
         </Text>
-        <MotionText
-          color="text.100"
-          fontSize="1.25rem"
-          opacity="90%"
-          letterSpacing="0.125rem"
-          position="absolute"
-          animate={{
-            y: 10,
-          }}
-          textTransform="uppercase"
-          transition={{
-            delay: 1,
-            ease: [0.25, 0.1, 0.25, 1],
-            duration: 0.5,
-            repeatDelay: 1,
-            repeatType: "reverse",
-            repeat: Infinity,
-          }}
-          bottom={20}
+        <Button
+          mt="2rem"
+          onClick={() =>
+            projects.current.scrollIntoView({ behavior: "smooth" })
+          }
         >
-          Scroll
-        </MotionText>
+          View My Work
+        </Button>
       </Flex>
       <Flex
         clipPath="polygon(0 100%, 100% 100%, 100% 100%, 0% 100%)"

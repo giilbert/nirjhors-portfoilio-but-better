@@ -76,29 +76,38 @@ export const Contact: React.FC<IContact> = (props) => {
           {props.blurb}
         </Text>
         <Link
+          // w="12rem"
+          // color="black"
+          // bgColor="white"
+          // p="0.5rem"
+          // borderRadius={0}
+          // border="0.2rem dotted"
+          // borderColor="accent"
+          // fontWeight="regular"
+          // boxShadow="inset 0 0 0 0 white"
+          // transition="ease-out 0.5s"
+          // sx={{
+          //   WebkitTransition: "ease-out 0.5s",
+          //   MozTransition: "ease-out 0.5s",
+          // }}
+          // _hover={{
+          //   textDecor: "none",
+          //   boxShadow: `inset 400px 0 0 0 ${theme.colors.accent}`,
+          // }}
+          // display="inline-block"
           w="12rem"
-          color="black"
-          bgColor="white"
           p="0.5rem"
-          borderRadius={0}
-          border="0.2rem dotted"
+          color="white"
+          border="0.125rem solid"
           borderColor="accent"
-          fontWeight="regular"
-          boxShadow="inset 0 0 0 0 white"
-          transition="ease-out 0.5s"
-          sx={{
-            WebkitTransition: "ease-out 0.5s",
-            MozTransition: "ease-out 0.5s",
-          }}
-          _hover={{
-            textDecor: "none",
-            boxShadow: `inset 400px 0 0 0 ${theme.colors.accent}`,
-          }}
+          borderRadius="0"
+          fontWeight="500"
+          _hover={{ bgColor: "accent" }}
           display="inline-block"
           href={`mailto:${props.email}`}
         >
           <Center gap="0.5rem">
-            <Text fontWeight="600" color="black">
+            <Text fontWeight="600" color="white">
               Say Hello
             </Text>
             <Image src="/wave-emoji.svg" w="1.5rem" />

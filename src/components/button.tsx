@@ -5,24 +5,17 @@ import {
 } from "@chakra-ui/react";
 
 export const Button: React.FC<ButtonProps> = ({ children, ...props }) => {
-  const theme = useTheme();
-
   return (
     <ChakraButton
       w="12rem"
-      color="black"
-      borderRadius={0}
-      border="0.2rem dotted"
+      color="white"
+      variant="outline"
       borderColor="accent"
-      fontWeight="regular"
-      boxShadow="inset 0 0 0 0 white"
-      transition="ease-out 0.5s"
-      sx={{
-        WebkitTransition: "ease-out 0.5s",
-        MozTransition: "ease-out 0.5s",
-      }}
-      _hover={{ boxShadow: `inset 400px 0 0 0 ${theme.colors.accent}` }}
+      border="0.125rem solid"
+      fontWeight="500"
+      _hover={{ bgColor: "accent" }}
       display="inline-block"
+      _focus={{ outline: "none" }}
       {...props}
     >
       {children}
