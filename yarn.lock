@@ -1843,6 +1843,11 @@ focus-lock@^0.9.1:
   dependencies:
     tslib "^2.0.3"
 
+focus-visible@^5.2.0:
+  version "5.2.0"
+  resolved "https://registry.yarnpkg.com/focus-visible/-/focus-visible-5.2.0.tgz#3a9e41fccf587bd25dcc2ef045508284f0a4d6b3"
+  integrity sha512-Rwix9pBtC1Nuy5wysTmKy+UjbDJpIfg8eHjw0rjZ1mX4GNLz1Bmd16uDpI3Gk1i70Fgcs8Csg2lPm8HULFg9DQ==
+
 foreach@^2.0.5:
   version "2.0.5"
   resolved "https://registry.yarnpkg.com/foreach/-/foreach-2.0.5.tgz#0bee005018aeb260d0a3af3ae658dd0136ec1b99"
@@ -1956,6 +1961,11 @@ gsap@^3.10.2:
   version "3.10.2"
   resolved "https://registry.yarnpkg.com/gsap/-/gsap-3.10.2.tgz#a3b0a842c398099fc7a80313bfb42253a3dc2b6b"
   integrity sha512-exJVOda3O1NpgGjM4dzZONmSODWFP+JF/DwfiBfCPQPr15nm3M0TQczYKLZlMdBNdWxHMvRPKVqc1e1/6YD+zA==
+
+hamburger-react@^2.5.0:
+  version "2.5.0"
+  resolved "https://registry.yarnpkg.com/hamburger-react/-/hamburger-react-2.5.0.tgz#7c0148af8f02f3b693564d69e590d02db8ffc221"
+  integrity sha512-5GSXe+ucxTPJ0SkhIsPQ/PRDweZPIKya1lfahAuExx31SdheeUA4uOPfQIAirbKona8hvo79VDr5LJQzPXsdpw==
 
 has-bigints@^1.0.1:
   version "1.0.1"

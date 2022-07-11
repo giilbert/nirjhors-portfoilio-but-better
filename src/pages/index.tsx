@@ -70,7 +70,7 @@ const Page: NextPage<{ query: IQuery }> = ({ query }) => {
       {!loading ? (
         <Layout>
           <RefProvider>
-            <Nav />
+            <Nav {...query.contact} />
             <Hero {...query.hero} />
             <Projects projects={query.allProjects} />
             <About {...query.about} />
