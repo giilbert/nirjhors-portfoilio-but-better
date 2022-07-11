@@ -54,8 +54,11 @@ const MotionBox = motion(Box);
 
 const Page: NextPage<{ query: IQuery }> = ({ query }) => {
   const [animating, setAnimating] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    setLoading(false);
+
     if (!animating) {
       setAnimating(!sessionStorage.getItem("loading"));
     }
@@ -65,6 +68,18 @@ const Page: NextPage<{ query: IQuery }> = ({ query }) => {
       setAnimating(false);
     }, 3000);
   }, []);
+
+  if (loading)
+    return (
+      <>
+        <Head>
+          <title>Nirjhor Nath</title>
+          <meta content="Nirjhor Nath" property="og:title" />
+          <meta content={query.hero.description} property="og:description" />
+          <meta content="#1DC8E2" data-react-helmet="true" name="theme-color" />
+        </Head>
+      </>
+    );
 
   return (
     <>
