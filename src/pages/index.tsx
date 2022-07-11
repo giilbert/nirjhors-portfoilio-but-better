@@ -53,10 +53,17 @@ const QUERY = `
 const MotionBox = motion(Box);
 
 const Page: NextPage<{ query: IQuery }> = ({ query }) => {
-  const [loading, setLoading] = useState(true);
+  const [animating, setAnimating] = useState(false);
 
   useEffect(() => {
-    setTimeout(() => setLoading(false), 3000);
+    if (!animating) {
+      setAnimating(!sessionStorage.getItem("loading"));
+    }
+
+    setTimeout(() => {
+      sessionStorage.setItem("loading", "true");
+      setAnimating(false);
+    }, 3000);
   }, []);
 
   return (
@@ -67,7 +74,7 @@ const Page: NextPage<{ query: IQuery }> = ({ query }) => {
         <meta content={query.hero.description} property="og:description" />
         <meta content="#1DC8E2" data-react-helmet="true" name="theme-color" />
       </Head>
-      {!loading ? (
+      {!animating ? (
         <Layout>
           <RefProvider>
             <Nav {...query.contact} />
