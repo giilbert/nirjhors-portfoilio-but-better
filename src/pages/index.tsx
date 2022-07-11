@@ -51,6 +51,10 @@ const Page: NextPage<{ query: IQuery }> = ({ query }) => {
     <>
       <Head>
         <title>Nirjhor Nath</title>
+        <title>Website Name</title>
+        <meta content="Nirjhor Nath" property="og:title" />
+        <meta content="Site Description" property="og:description" />
+        <meta content="#1DC8E2" data-react-helmet="true" name="theme-color" />
       </Head>
       <Layout>
         <RefProvider>
