@@ -20,7 +20,7 @@ export const Hero: React.FC<IHero> = ({ title, name, description }) => {
       .timeline()
       .to(imgRef.current, {
         clipPath: "polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)",
-        delay: 0.05,
+        delay: 0.6,
         duration: 0.8,
       })
       .from(headingRef.current, {
