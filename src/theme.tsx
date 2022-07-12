@@ -1,6 +1,6 @@
 import { extendTheme } from "@chakra-ui/react";
 
-const fonts = { heading: "Bitter", body: "Segoe UI" };
+const fonts = { heading: "Bitter", body: "Poppins" };
 
 const theme = extendTheme({
   colors: {
