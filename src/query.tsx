@@ -25,9 +25,14 @@ export interface IContact {
   twitter: string;
 }
 
-export interface IQuery {
+export interface IIndexQuery {
   hero: IHero;
   allProjects: IProject[];
   about: IAbout;
   contact: IContact;
+}
+
+export interface IWorkQuery {
+  contact: IContact;
+  allProjects: (IProject & { year: string })[];
 }

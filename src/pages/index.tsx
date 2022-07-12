@@ -1,9 +1,9 @@
 import { Box } from "@chakra-ui/react";
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { GraphQLClient } from "graphql-request";
-import { GetStaticProps, InferGetStaticPropsType, NextPage } from "next";
+import { GetStaticProps, NextPage } from "next";
 import Head from "next/head";
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import { About } from "../components/about";
 import { Contact } from "../components/contact";
 import { Footer } from "../components/footer";
@@ -12,10 +12,9 @@ import { Layout } from "../components/layout";
 import { Loading } from "../components/loading";
 import { Nav } from "../components/nav";
 import { Projects } from "../components/projects";
+import { DATOCMS_ENDPOINT } from "../consts";
 import { RefProvider } from "../context";
-import { IQuery } from "../query";
-
-const DATOCMS_ENDPOINT = "https://graphql.datocms.com";
+import { IIndexQuery } from "../query";
 
 const QUERY = `
   query Query {
@@ -46,13 +45,12 @@ const QUERY = `
       linkedin
       twitter
     }
-}
-
+  }
 `;
 
 const MotionBox = motion(Box);
 
-const Page: NextPage<{ query: IQuery }> = ({ query }) => {
+const Page: NextPage<{ query: IIndexQuery }> = ({ query }) => {
   const [animating, setAnimating] = useState(false);
   const [loading, setLoading] = useState(true);
 
@@ -123,7 +121,7 @@ export const getStaticProps: GetStaticProps = async () => {
     },
   });
 
-  const query = await client.request<IQuery>(QUERY);
+  const query = await client.request<IIndexQuery>(QUERY);
 
   return { props: { query } };
 };
