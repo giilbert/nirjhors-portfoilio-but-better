@@ -1,13 +1,9 @@
-import {
-  Button as ChakraButton,
-  ButtonProps,
-  useTheme,
-} from "@chakra-ui/react";
+import { Button as ChakraButton, ButtonProps } from "@chakra-ui/react";
 
 export const Button: React.FC<ButtonProps> = ({ children, ...props }) => {
   return (
     <ChakraButton
-      w="12rem"
+      w="min-content"
       color="white"
       variant="outline"
       borderColor="accent"

@@ -1,12 +1,10 @@
-import { HamburgerIcon } from "@chakra-ui/icons";
-import { Button, Flex, Image } from "@chakra-ui/react";
+import { Flex, Image } from "@chakra-ui/react";
 import { motion } from "framer-motion";
-import { IContact } from "../query";
 import { Menu } from "./menu";
 
 const MotionFlex = motion(Flex);
 
-export const Nav: React.FC<IContact> = (props) => {
+export const Nav: React.FC = () => {
   return (
     <MotionFlex
       mt="2rem"
@@ -22,7 +20,7 @@ export const Nav: React.FC<IContact> = (props) => {
       }}
     >
       <Image src="/logo.svg" />
-      <Menu {...props} />
+      <Menu />
     </MotionFlex>
   );
 };

@@ -1,51 +1,42 @@
-import { HamburgerIcon } from "@chakra-ui/icons";
-import {
-  Box,
-  Flex,
-  Text,
-  IconButton,
-  Link,
-  useDisclosure,
-  chakra,
-} from "@chakra-ui/react";
+import { Box, Flex, Text, Link, useDisclosure, chakra } from "@chakra-ui/react";
 import { AnimatePresence, motion } from "framer-motion";
 import NextLink from "next/link";
 import React, { useEffect } from "react";
-import { IContact } from "../query";
 import { Cross as Hamburger } from "hamburger-react";
 
 const MotionBox = motion(Box);
 const StylableHamburger = chakra(Hamburger);
 
-const LinkGroupWrapper: React.FC<React.PropsWithChildren<{ delay: number }>> =
-  ({ delay, children }) => (
-    <MotionBox
-      py="4rem"
-      display="flex"
-      flexDir="column"
-      initial={{ y: "-1000%" }}
-      animate={{
-        y: 0,
-        transition: {
-          delay,
-          ease: [0.7, 0, 0.07, 1],
-          duration: 1,
-        },
-      }}
-      exit={{
-        y: "-1000%",
-        transition: {
-          delay: 0.1,
-          ease: [0.7, 0, 0.07, 1],
-          duration: 0.5,
-        },
-      }}
-    >
-      {children}
-    </MotionBox>
-  );
+const LinkGroupWrapper: React.FC<
+  React.PropsWithChildren<{ delay: number }>
+> = ({ delay, children }) => (
+  <MotionBox
+    py="4rem"
+    display="flex"
+    flexDir="column"
+    initial={{ y: "-1000%" }}
+    animate={{
+      y: 0,
+      transition: {
+        delay,
+        ease: [0.7, 0, 0.07, 1],
+        duration: 1,
+      },
+    }}
+    exit={{
+      y: "-1000%",
+      transition: {
+        delay: 0.1,
+        ease: [0.7, 0, 0.07, 1],
+        duration: 0.5,
+      },
+    }}
+  >
+    {children}
+  </MotionBox>
+);
 
-export const Menu: React.FC<IContact> = (props) => {
+export const Menu: React.FC = () => {
   const { isOpen, onToggle } = useDisclosure();
 
   useEffect(() => {
@@ -95,34 +86,9 @@ export const Menu: React.FC<IContact> = (props) => {
                 >
                   Sitemap
                 </Text>
-                <NextLink href="/" passHref>
-                  <Link fontSize="4vmax">Home</Link>
-                </NextLink>
-                <NextLink href="/work" passHref>
-                  <Link fontSize="4vmax">Work</Link>
-                </NextLink>
-                <NextLink href="/writing" passHref>
-                  <Link fontSize="4vmax">Writing</Link>
-                </NextLink>
+                <Text>No lol</Text>
               </LinkGroupWrapper>
-              <LinkGroupWrapper delay={0.5}>
-                <Text
-                  fontSize="max(1vmax, 1rem)"
-                  textTransform="uppercase"
-                  letterSpacing="0.5rem"
-                >
-                  Socials
-                </Text>
-                <Link fontSize="4vmax" target="_blank" href={props.instagram}>
-                  Instagram
-                </Link>
-                <Link fontSize="4vmax" target="_blank" href={props.github}>
-                  GitHub
-                </Link>
-                <Link fontSize="4vmax" target="_blank" href={props.twitter}>
-                  Twitter
-                </Link>
-              </LinkGroupWrapper>
+              <LinkGroupWrapper delay={0.5}></LinkGroupWrapper>
             </Flex>
           </MotionBox>
         )}

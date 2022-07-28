@@ -1,19 +1,19 @@
 import gsap from "gsap";
-import { Box, Flex, Heading, Icon, Text } from "@chakra-ui/react";
+import { Box, Flex, Heading, Text } from "@chakra-ui/react";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import { useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useRefs } from "../context";
-import { IHero } from "../query";
 import { motion } from "framer-motion";
 import { Button } from "./button";
-import { ChevronDownIcon } from "@chakra-ui/icons";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const MotionText = motion(Text);
 
-export const Hero: React.FC<IHero> = ({ title, name, description }) => {
+export const Hero: React.FC = () => {
   const { projects, headingRef, imgRef } = useRefs();
+  const oob = useRef<HTMLDivElement[] | null>([]);
+  const [lur, setLur] = useState(false);
 
   useEffect(() => {
     gsap
@@ -46,6 +46,34 @@ export const Hero: React.FC<IHero> = ({ title, name, description }) => {
       });
   }, []);
 
+  useEffect(() => {
+    const [a, b, c] = oob.current;
+    if (!lur || !a || !b || !c) return;
+    let [x, y, z] = [0, 0, 0];
+
+    const update = () => {
+      x = performance.now() / 3000;
+      y = performance.now() / 4000;
+      z = performance.now() / 3900;
+
+      a.style.transform = `rotateZ(${Math.sin(z) * 720}deg) rotateX(${
+        x * 534
+      }deg) rotateY(${Math.cos(x / 10) * 130}deg) `;
+      b.style.transform = `rotateX(${Math.sin(x) * 320}deg) rotateZ(${
+        Math.sin(z) * 280
+      }deg) rotateY(${y * 980}deg) `;
+      c.style.transform = `rotateY(${Math.sin(y) * 720}deg) rotateX(${
+        Math.cos(x) * 360
+      }deg) rotateZ(${Math.sin(y) * 220}deg)`;
+    };
+
+    const aa = setInterval(update);
+
+    return () => {
+      clearInterval(aa);
+    };
+  }, [lur, oob.current]);
+
   return (
     <Box h="100vh" display="flex" mt="-4.5rem" overflowY="hidden">
       <Flex
@@ -55,30 +83,34 @@ export const Hero: React.FC<IHero> = ({ title, name, description }) => {
         ref={headingRef}
         position="relative"
       >
-        <Text fontFamily="Space Mono" color="accent" fontSize="1rem">
-          {name}
+        <Text
+          mt="34rem !important"
+          fontFamily="Space Mono"
+          color="accent"
+          fontSize="1rem"
+          ref={(el) => (oob.current[0] = el)}
+        >
+          CODE CAMP CODE CAMP CODE CAMP CODE CAMP CODE CAMP
         </Text>
         <Heading
           fontSize={{ base: "3rem", lg: "5rem" }}
           textTransform="uppercase"
           maxWidth="25ch"
+          ref={(el) => (oob.current[1] = el)}
         >
-          {title}
+          Welcome to Day 4 <br />
+          of Code Camp!
         </Heading>
         <Text
           color="text.100"
           fontSize={{ base: "1rem", lg: "1.25rem" }}
           maxWidth="64ch"
+          ref={(el) => (oob.current[2] = el)}
         >
-          {description}
+          We will be beginning in a few minutes
         </Text>
-        <Button
-          mt="2rem"
-          onClick={() =>
-            projects.current.scrollIntoView({ behavior: "smooth" })
-          }
-        >
-          View My Work
+        <Button mt="2rem" py="2" px="4" onClick={() => setLur(!lur)}>
+          Nirjhor's website, butchered beautifully by Gilbert
         </Button>
       </Flex>
       <Flex
